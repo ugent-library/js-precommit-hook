@@ -1,0 +1,12 @@
+{
+  "name": "js-precommit-hook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Koen Verheyen <koen.verheyen@inuits.eu>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "esm": "^3.2.25",
+    "promisify-child-process": "^3.1.3"
+  }
+}
