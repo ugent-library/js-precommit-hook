@@ -1,6 +1,6 @@
 {
   "name": "js-precommit-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "Koen Verheyen <koen.verheyen@inuits.eu>",
   "license": "BSD-3-Clause",
