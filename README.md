@@ -24,9 +24,9 @@ Then in your `package.json` file add the `scripts` (if not already present) and 
 ```
 {
     ...
-    "scripts": [
+    "scripts": {
         "precommit": "node node_modules/js-precommit-hook"
-    ],
+    },
     ...
     "precommit": "precommit",
     ...
