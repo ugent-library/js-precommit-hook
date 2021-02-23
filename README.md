@@ -10,13 +10,13 @@ This package contains a default pre-commit git hook script for use in JS or Node
 Add this project as a development dependency to your project using the `npm` or `yarn` package manager.
 
 ```
-$ npm install --save-dev https://github.com/Universiteitsbibliotheek/js-precommit-hook
+$ npm install --save-dev https://github.com/ugent-library/js-precommit-hook
 ```
 
 or
 
 ```
-$ yarn add -D https://github.com/Universiteitsbibliotheek/js-precommit-hook
+$ yarn add -D https://github.com/ugent-library/js-precommit-hook
 ```
 
 Then in your `package.json` file add the `scripts` (if not already present) and `precommit` sections as follows:
