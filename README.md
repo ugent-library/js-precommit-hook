@@ -4,6 +4,7 @@ This package contains a default pre-commit git hook script for use in JS or Node
 
 - debugger
 - .only
+- .skip
 
 ## How to install
 
