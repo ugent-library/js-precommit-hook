@@ -4,7 +4,7 @@ import fs from 'fs'
 import 'colors'
 
 async function run() {
-  const re = /(debugger|\.only|\.skip)/
+  const re = /(\Wdebugger\W|\.only\s*\(|\.skip\s*\(|\Wxit\s*\()/
 
   let { stdout } = await exec('git diff --cached --name-only --diff-filter=ACM')
   if (stdout) {
