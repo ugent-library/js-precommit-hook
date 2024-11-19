@@ -1,47 +1,52 @@
-import { exec } from 'promisify-child-process'
-import path from 'path'
-import fs from 'fs'
-import 'colors'
+import { exec } from "promisify-child-process";
+import path from "path";
+import fs from "fs";
+import "colors";
 
 async function run() {
-  const re = /(\Wdebugger\W|\.only\s*\(|\.skip\s*\(|\Wxit\s*\()/
+  const re = /(\Wdebugger\W|\.only\s*\(|\.skip\s*\(|\Wxit\s*\()/;
 
-  let { stdout } = await exec('git diff --cached --name-only --diff-filter=ACM')
+  let { stdout } = await exec(
+    "git diff --cached --name-only --diff-filter=ACM",
+  );
   if (stdout) {
-    const files = stdout.trim().split('\n')
+    const files = stdout.trim().split("\n");
 
     for (let file of files) {
-      const content = fs.readFileSync(path.resolve(process.cwd(), file), 'utf-8')
+      const content = fs.readFileSync(
+        path.resolve(process.cwd(), file),
+        "utf-8",
+      );
 
-      const m = re.exec(content)
+      const m = re.exec(content);
       if (m) {
         let matchIndex = m.index,
-          matchLine = 1
-        for (let line of content.split('\n')) {
+          matchLine = 1;
+        for (let line of content.split("\n")) {
           if (line.length > matchIndex) {
-            break
+            break;
           }
 
-          matchIndex -= line.length + 1 // also count the line feed
-          matchLine++
+          matchIndex -= line.length + 1; // also count the line feed
+          matchLine++;
         }
 
         console.error(
-          'Commit rejected:'.bgRed.bold,
-          'Found',
+          "Commit rejected:".bgRed.bold,
+          "Found",
           `"${m[1]}"`.yellow.bold,
-          'in file',
+          "in file",
           file.yellow.bold,
-          'at line',
+          "at line",
           matchLine.toString().yellow.bold,
-          'position',
-          (matchIndex + 1).toString().yellow.bold
-        )
+          "position",
+          (matchIndex + 1).toString().yellow.bold,
+        );
 
-        process.exit(1)
+        process.exit(1);
       }
     }
   }
 }
 
-run()
+run();
