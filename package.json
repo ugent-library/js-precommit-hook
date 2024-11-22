@@ -5,6 +5,10 @@
   "author": "Koen Verheyen <koen.verheyen@inuits.eu>",
   "license": "BSD-3-Clause",
   "type": "module",
+  "scripts": {
+    "precommit": "node index.js"
+  },
+  "precommit": "precommit",
   "dependencies": {
     "colors": "^1.4.0",
     "pre-commit": "^1.2.2",
