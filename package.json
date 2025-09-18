@@ -14,7 +14,7 @@
     "pre-commit": "^1.2.2",
     "promisify-child-process": "^4.1.2"
   },
-  "resolutions": {
+  "overrides": {
     "cross-spawn": "^7.0.6"
   }
 }
