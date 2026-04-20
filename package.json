@@ -1,20 +1,20 @@
 {
-  "name": "js-precommit-hook",
-  "version": "2.1.4",
-  "main": "index.js",
-  "author": "Koen Verheyen <koen.verheyen@inuits.eu>",
-  "license": "BSD-3-Clause",
-  "type": "module",
-  "scripts": {
-    "precommit": "node index.js"
-  },
-  "precommit": "precommit",
-  "dependencies": {
-    "colors": "^1.4.0",
-    "pre-commit": "^1.2.2",
-    "promisify-child-process": "^4.1.2"
-  },
-  "overrides": {
-    "cross-spawn": "^7.0.6"
-  }
+	"name": "js-precommit-hook",
+	"version": "2.1.4",
+	"main": "index.js",
+	"author": "Koen Verheyen <koen.verheyen@inuits.eu>",
+	"license": "BSD-3-Clause",
+	"type": "module",
+	"scripts": {
+		"precommit": "node index.js"
+	},
+	"precommit": "precommit",
+	"dependencies": {
+		"colors": "^1.4.0",
+		"pre-commit": "^1.2.2",
+		"promisify-child-process": "^5.0.1"
+	},
+	"overrides": {
+		"cross-spawn": "^7.0.6"
+	}
 }

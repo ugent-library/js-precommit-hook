@@ -1,18 +1,19 @@
-import { exec } from "promisify-child-process";
-import path from "path";
-import fs from "fs";
+import fs from "node:fs";
+import path from "node:path";
+
 import "colors";
+import { exec } from "promisify-child-process";
 
 async function run() {
   const re = /(\Wdebugger\W|\.only\s*\(|\.skip\s*\(|\Wxit\s*\()/;
 
-  let { stdout } = await exec(
+  const { stdout } = await exec(
     "git diff --cached --name-only --diff-filter=ACM",
   );
   if (stdout) {
     const files = stdout.trim().split("\n");
 
-    for (let file of files) {
+    for (const file of files) {
       const content = fs.readFileSync(
         path.resolve(process.cwd(), file),
         "utf-8",
@@ -22,7 +23,7 @@ async function run() {
       if (m) {
         let matchIndex = m.index,
           matchLine = 1;
-        for (let line of content.split("\n")) {
+        for (const line of content.split("\n")) {
           if (line.length > matchIndex) {
             break;
           }
