@@ -11,10 +11,7 @@
 	"precommit": "precommit",
 	"dependencies": {
 		"colors": "^1.4.0",
-		"pre-commit": "^1.2.2",
+		"pre-commit": "^2.0.0",
 		"promisify-child-process": "^5.0.1"
-	},
-	"overrides": {
-		"cross-spawn": "^7.0.6"
 	}
 }
